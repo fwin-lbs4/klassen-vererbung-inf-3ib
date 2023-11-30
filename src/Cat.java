@@ -8,7 +8,9 @@ import java.util.Random;
  * @version 1.0
  */
 public class Cat extends Pet {
-    /** Happiness of the cat. */
+    /**
+     * Happiness of the cat.
+     */
     private boolean happy;
 
     /**

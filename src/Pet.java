@@ -6,11 +6,17 @@
  * @version 1.0
  */
 abstract class Pet extends Animal {
-    /** Name of the pet. */
+    /**
+     * Name of the pet.
+     */
     public String name;
-    /** Owner of the pet. */
+    /**
+     * Owner of the pet.
+     */
     public final Person owner;
-    /** Is the pet hungry? */
+    /**
+     * Is the pet hungry?
+     */
     private boolean hungry;
 
     /**

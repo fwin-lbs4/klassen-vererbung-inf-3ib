@@ -7,7 +7,9 @@ import java.time.Instant;
  * @version 1.0
  */
 public class Dog extends Pet {
-    /** Is the dog a good dog? */
+    /**
+     * Is the dog a good dog?
+     */
     private boolean goodDog;
 
     /**

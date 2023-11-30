@@ -5,7 +5,9 @@
  * @version 1.0
  */
 public class Person {
-    /** Name of the person */
+    /**
+     * Name of the person
+     */
     public String name;
 
     /**
