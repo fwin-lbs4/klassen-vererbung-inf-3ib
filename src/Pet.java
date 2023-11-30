@@ -1,6 +1,6 @@
 /**
  * In this class we define a pet.
- * It is an abstract class, so it will never be instantiated on it's own.
+ * It is an abstract class, so it will never be instantiated on its own.
  *
  * @author Florian.WINDISCH
  * @version 1.0
