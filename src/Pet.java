@@ -22,15 +22,23 @@ abstract class Pet extends Animal {
     /**
      * Generate a pet with a species, name, owner and birthday.
      *
-     * @param species  The species of the pet.
-     * @param name     The name of the pet.
-     * @param owner    The owner of the pet.
-     * @param birthday Unix timestamp when the pet was born.
+     * @param species    The species of the pet.
+     * @param name       The name of the pet.
+     * @param owner      The owner of the pet.
+     * @param birthday   Unix timestamp when the pet was born.
+     * @param <T>        Generic type used for owner.
+     * @throws Exception Throws if owner is not of type Person or String.
      */
-    public Pet(String species, String name, Person owner, long birthday) {
+    public <T> Pet(String species, String name, T owner, long birthday) throws Exception {
         super(species, birthday);
         this.name = name;
-        this.owner = owner;
+
+        if (!(owner instanceof Person || owner instanceof String)) {
+            throw new Exception("Parameter owner must be of type String or Person!");
+        }
+
+        this.owner = (owner instanceof String) ? new Person((String) owner) : (Person) owner;
+
         this.hungry = true;
     }
 

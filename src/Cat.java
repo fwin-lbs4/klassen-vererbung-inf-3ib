@@ -16,11 +16,13 @@ public class Cat extends Pet {
     /**
      * If a timestamp was passed to the constructor pass it to the constructor of the parent.
      *
-     * @param birthday Unix timestamp when the cat was born.
-     * @param name     Name of the cat.
-     * @param owner    The owner of the cat.
+     * @param birthday   Unix timestamp when the cat was born.
+     * @param name       Name of the cat.
+     * @param owner      The owner of the cat.
+     * @param <T>        Generic type used for owner.
+     * @throws Exception Throws if owner is not of type Person or String.
      */
-    public Cat(String name, Person owner, long birthday) {
+    public <T> Cat(String name, T owner, long birthday) throws Exception {
         super("cat", name, owner, birthday);
         this.happy = (new Random()).nextInt(2) == 0;
     }
@@ -31,7 +33,7 @@ public class Cat extends Pet {
      * @param name  Name of the cat.
      * @param owner The owner of the cat.
      */
-    public Cat(String name, Person owner) {
+    public <T> Cat(String name, T owner) throws Exception {
         super("cat", name, owner, Instant.now().getEpochSecond());
         this.happy = (new Random()).nextInt(2) == 0;
     }

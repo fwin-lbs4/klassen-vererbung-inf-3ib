@@ -19,7 +19,7 @@ public class Dog extends Pet {
      * @param name     Name of the dog.
      * @param owner    The owner of the dog.
      */
-    public Dog(String name, Person owner, long birthday) {
+    public <T> Dog(String name, T owner, long birthday) throws Exception {
         super("dog", name, owner, birthday);
         this.goodDog = true;
     }
@@ -27,10 +27,12 @@ public class Dog extends Pet {
     /**
      * If no timestamp is passed to the constructor the dog will be born now.
      *
-     * @param name  Name of the dog.
-     * @param owner The owner of the dog.
+     * @param name       Name of the dog.
+     * @param owner      The owner of the dog.
+     * @param <T>        Generic type used for owner.
+     * @throws Exception Throws if owner is not of type Person or String.
      */
-    public Dog(String name, Person owner) {
+    public <T> Dog(String name, T owner) throws Exception {
         super("dog", name, owner, Instant.now().getEpochSecond());
         this.goodDog = true;
     }
